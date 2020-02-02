@@ -60,27 +60,42 @@ class NewsController extends Component {
     render(){
         let data = this.state.articles.data;
         if(data){
-                        
+            var pageNumber = this.props.pageNumber;
+ 
             var itemsToDisplayInPage = (
                 data.map(item => {
-                    let srlNumber = data.indexOf(item)+1;
+                    let srlNumber = (this.props.pageNumber-1)*30 + data.indexOf(item)+1;
                     return <NewsItem id={item.id} key={item.id} item={item} srlNumber={srlNumber}/>
                 })
             )
-            var pageNumber = this.props.pageNumber;
-        }else{
-            itemsToDisplayInPage = <Loader />;
-        }
-        return (
-            <div className={classes.NewsController}>
-                {itemsToDisplayInPage}
-                <Pagination pageLimit={this.props.pageLimit}
+            var pagination = (
+
+                            <Pagination pageLimit={this.props.pageLimit}
                 click={this.changePage} 
                 pageNumber={pageNumber}
                 LeftArrowClickHandler={this.LeftArrowClickHandler}
                 RightArrowClickHandler={this.RightArrowClickHandler}
 
                 />
+
+            )
+        }else if(!data){
+            itemsToDisplayInPage = <Loader />;
+            pagination = "";
+        }
+        return (
+            <div className={classes.NewsController}>
+            {pagination}
+
+                {itemsToDisplayInPage}
+                {/* <Pagination pageLimit={this.props.pageLimit}
+                click={this.changePage} 
+                pageNumber={pageNumber}
+                LeftArrowClickHandler={this.LeftArrowClickHandler}
+                RightArrowClickHandler={this.RightArrowClickHandler}
+
+                /> */}
+                {pagination}
             </div>
         )
     }

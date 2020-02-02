@@ -98,8 +98,11 @@
     font-size: 14px;
   }
   
-  .Domain {
-    font-size: 13px;
+
+  .Details, .Name, .By, .Comments,.Score, .Domain{
+    font-size: 0.7em;
   }
-  
+  .Details{
+    margin: 0;
+  }
 }

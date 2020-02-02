@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Pagination.module.css';
 
 const Pagination = (props) => {
-    var numberLimit = Math.floor(props.numberOfPages/10);
+    // var numberLimit = Math.floor(props.numberOfPages/10);
 
   const slider = (
     <div className={classes.Slider}>

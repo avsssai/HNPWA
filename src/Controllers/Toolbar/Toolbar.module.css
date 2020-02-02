@@ -19,7 +19,7 @@
 }
 
 .Logo {
-    margin: 5px 19vw;
+    margin: 6px 19vw;
     background-color: white;
     height: fit-content;
     color: #FF6600;
@@ -28,7 +28,6 @@
     text-decoration: none;
 
 }
-
 @media (max-width:500px){
     .Toolbar{
         display: flex;
