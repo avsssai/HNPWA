@@ -16,16 +16,29 @@ class NewsController extends Component {
         console.log(source);
         Axios.get(source)
         .then(data => {
-            const numberOfPages = data.data.length;
             this.setState({
-                articles:data,
-                numberOfPages:numberOfPages
+                articles:data
             });
         })
         .catch(err => console.log(err));
 
     }
-    changePage = (num) => {
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.source !== this.props.source) {
+          console.log('the props have changed.')
+          var source = `${this.props.source}`;
+          console.log(source);
+          Axios.get(source)
+          .then(data => {
+              this.setState({
+                  articles:data
+              });
+          })
+          .catch(err => console.log(err));
+  
+        }
+      }
+          changePage = (num) => {
         this.setState({
             pageNumber:num
         })
@@ -34,27 +47,40 @@ class NewsController extends Component {
     commentsClicked = (item) => {
         console.log(item)
     }
+    LeftArrowClickHandler = () => {
+        this.props.LeftArrowClickHandler();
+        console.log("clicked");
+    }
+    RightArrowClickHandler = () => {
+        this.props.RightArrowClickHandler();
+        console.log("clicked");
+
+    }
+
     render(){
-        let data = this.state.articles && this.state.articles.data;
+        let data = this.state.articles.data;
         if(data){
-            const pageNumber = (this.state.pageNumber-1)*10;
-            const sliceEnd = pageNumber+10;
-    
-            var news = this.state.articles.data.slice(pageNumber,sliceEnd);
-            
-            var newsItems = (
-                news.map((item,id) => {
-                    return <NewsItem id={item} key={item} srl={pageNumber+id+1} commentsClicked={()=>this.commentsClicked(item)}/>
+                        
+            var itemsToDisplayInPage = (
+                data.map(item => {
+                    let srlNumber = data.indexOf(item)+1;
+                    return <NewsItem id={item.id} key={item.id} item={item} srlNumber={srlNumber}/>
                 })
             )
-    
+            var pageNumber = this.props.pageNumber;
         }else{
-            newsItems = <Loader />;
+            itemsToDisplayInPage = <Loader />;
         }
         return (
             <div className={classes.NewsController}>
-                {newsItems}
-                <Pagination numberOfPages={this.state.numberOfPages} click={this.changePage}/>
+                {itemsToDisplayInPage}
+                <Pagination pageLimit={this.props.pageLimit}
+                click={this.changePage} 
+                pageNumber={pageNumber}
+                LeftArrowClickHandler={this.LeftArrowClickHandler}
+                RightArrowClickHandler={this.RightArrowClickHandler}
+
+                />
             </div>
         )
     }

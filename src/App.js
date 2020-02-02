@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import classes from "./App.module.css";
 import Top from "./Components/Top/Top";
-import Best from "./Components/Best/Best";
-import New from "./Components/New/New";
+import Newest from './Components/Newest/Newest';
+import Ask from "./Components/Ask/Ask";
 import Toolbar from "./Controllers/Toolbar/Toolbar";
+import Show from './Components/Show/Show';
+import Jobs from './Components/Jobs/Jobs';
 // import Home from "./Home/Home";
 import Comments from './Controllers/Comments/Comments';
 
@@ -19,8 +21,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Top}  />
             <Route exact path="/top" component={Top}  />
-            <Route exact path="/best" component={Best} />
-            <Route exact path="/new" component={New} />
+            <Route exact path="/newest" component={Newest} />
+            <Route exact path="/ask" component={Ask} />
+            <Route exact path="/show" component={Show} />
+            <Route exact path="/jobs" component={Jobs} />
             <Route exact path="/comments/:id" component={Comments} />
           </Switch>
         </Router>

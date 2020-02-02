@@ -15,12 +15,19 @@ const Toolbar = props => {
         <Link to="/top" style={{ textDecoration: 'none' }}>
           <ToolbarItem className={classes.Item} category="Top" />
         </Link>
-        <Link to="/best" style={{ textDecoration: 'none' }}>
-          <ToolbarItem className={classes.Item} category="Best" />
+        <Link to="/newest" style={{ textDecoration: 'none' }}>
+          <ToolbarItem className={classes.Item} category="Newest" />
         </Link>
-        <Link to="/new" style={{ textDecoration: 'none' }}>
-          <ToolbarItem className={classes.Item} category="New" />
+        <Link to="/ask" style={{ textDecoration: 'none' }}>
+          <ToolbarItem className={classes.Item} category="Ask" />
         </Link>
+        <Link to="/show" style={{ textDecoration: 'none' }}>
+          <ToolbarItem className={classes.Item} category="Show" />
+        </Link>
+        <Link to="/jobs" style={{ textDecoration: 'none' }}>
+          <ToolbarItem className={classes.Item} category="Jobs" />
+        </Link>
+
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 .Toolbar{
     color: red;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #FF6600;
 }
 
@@ -33,6 +33,8 @@
     .Toolbar{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 18px;
         position: fixed;
         padding: 0;
         top: 0;
@@ -48,3 +50,4 @@
         left: 0;
     }
 }
+

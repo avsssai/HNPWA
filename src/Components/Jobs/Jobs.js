@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import classes from './Top.module.css';
+import React,{Component} from 'react';
+import classes from './Jobs.module.css';
 import NewsController from '../../Controllers/NewsController/NewsController';
 
-class Top extends Component {
+class Jobs extends Component {
   state = {
     pageNumber:1,
-    source:`https://api.hnpwa.com/v0/news/1.json`
+    source:`https://api.hnpwa.com/v0/jobs/1.json`
   }
   LeftArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
 
-    const url =`https://api.hnpwa.com/v0/news/${pageNumber-1}.json`;
+    const url =`https://api.hnpwa.com/v0/jobs/${pageNumber-1}.json`;
 
     this.setState(state=>({
       pageNumber: state.pageNumber - 1,
@@ -20,7 +20,7 @@ class Top extends Component {
   }
   RightArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
-    const url =`https://api.hnpwa.com/v0/news/${pageNumber+1}.json`;
+    const url =`https://api.hnpwa.com/v0/jobs/${pageNumber+1}.json`;
 
     this.setState(state=>({
       pageNumber: state.pageNumber + 1,
@@ -30,7 +30,7 @@ class Top extends Component {
   }
 
   render(){
-    var sourceURL=`https://api.hnpwa.com/v0/news/${this.state.pageNumber}.json`
+    var sourceURL=`https://api.hnpwa.com/v0/jobs/${this.state.pageNumber}.json`
     console.log(sourceURL);
     return(
       <div className={classes.Layout}>
@@ -39,11 +39,11 @@ class Top extends Component {
           LeftArrowClickHandler={this.LeftArrowClickHandler}
           RightArrowClickHandler={this.RightArrowClickHandler}
           source={sourceURL}
-          pageLimit="10"
+          pageLimit="1"
           pageNumber={this.state.pageNumber}/>
       </div>
     )  
   }
 }
 
-export default Top;
+export default Jobs;

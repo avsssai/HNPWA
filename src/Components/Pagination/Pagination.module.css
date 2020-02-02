@@ -12,3 +12,7 @@
 .NumberButton::after {
     content: " | ";
 }
+
+.Slider {
+    display: flex;
+}
