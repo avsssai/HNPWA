@@ -11,9 +11,9 @@ const NewsItem = props => {
     <div className={classes.NewsItem}>
       <div className={classes.Title}>
         <div className={classes.Srl}>{props.srlNumber}. </div>
-        <a href={item.url}>{item.title}</a>
+        <a href={item.url}>{item.title}        <span className={classes.Domain}> ({item.domain})</span>
+</a>
 
-        <span className={classes.Domain}> ({item.domain})</span>
       </div>
       <div className={classes.Details}>
         <div className={classes.Score}>{item.points} points</div>

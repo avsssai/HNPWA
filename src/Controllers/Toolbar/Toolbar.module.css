@@ -4,7 +4,9 @@
     justify-content: space-around;
     background-color: #FF6600;
 }
-
+.Selected { 
+    color: red;
+}
 .Items{
     display: flex;
     position: relative;

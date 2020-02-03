@@ -9,6 +9,9 @@ class Jobs extends Component {
   }
   LeftArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
+    if(pageNumber <= 1) {
+      return;
+    }
 
     const url =`https://api.hnpwa.com/v0/jobs/${pageNumber-1}.json`;
 
@@ -20,6 +23,10 @@ class Jobs extends Component {
   }
   RightArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
+    if(pageNumber >= 1) {
+      return;
+    }
+
     const url =`https://api.hnpwa.com/v0/jobs/${pageNumber+1}.json`;
 
     this.setState(state=>({

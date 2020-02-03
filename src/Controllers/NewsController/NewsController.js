@@ -35,7 +35,9 @@ class NewsController extends Component {
               });
           })
           .catch(err => console.log(err));
-  
+            // window.scrollTo(0, 0)
+            window.scroll({top: 0, left: 0, behavior: 'smooth' })
+
         }
       }
           changePage = (num) => {
@@ -85,7 +87,6 @@ class NewsController extends Component {
         }
         return (
             <div className={classes.NewsController}>
-            {pagination}
 
                 {itemsToDisplayInPage}
                 {/* <Pagination pageLimit={this.props.pageLimit}

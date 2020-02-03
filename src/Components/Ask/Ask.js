@@ -9,6 +9,9 @@ class Ask extends Component {
   }
   LeftArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
+    if(pageNumber <= 1) {
+      return;
+    }
 
     const url =`https://api.hnpwa.com/v0/ask/${pageNumber-1}.json`;
 
@@ -19,7 +22,11 @@ class Ask extends Component {
 
   }
   RightArrowClickHandler = () => {
+    
     const pageNumber = this.state.pageNumber;
+      if(pageNumber >= 2) {
+        return;
+      }
     const url =`https://api.hnpwa.com/v0/ask/${pageNumber+1}.json`;
 
     this.setState(state=>({

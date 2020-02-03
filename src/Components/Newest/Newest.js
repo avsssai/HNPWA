@@ -9,6 +9,9 @@ class Newest extends Component {
   }
   LeftArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
+    if(pageNumber <= 1) {
+      return;
+    }
 
     const url =`https://api.hnpwa.com/v0/newest/${pageNumber-1}.json`;
 
@@ -20,6 +23,10 @@ class Newest extends Component {
   }
   RightArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
+    if(pageNumber >= 12) {
+      return;
+    }
+
     const url =`https://api.hnpwa.com/v0/newest/${pageNumber+1}.json`;
 
     this.setState(state=>({

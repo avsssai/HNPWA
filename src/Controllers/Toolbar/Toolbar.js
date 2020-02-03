@@ -1,33 +1,72 @@
 import React from "react";
 import classes from "./Toolbar.module.css";
 import ToolbarItem from "../../Components/ToolbarItem/ToolbarItem";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Toolbar = props => {
   return (
     <div className={classes.Toolbar}>
-      <Link to="/" style={{ textDecoration: 'none' }}>
-      <div className={classes.Logo}>HackerNews</div>
-      </Link>
+      <NavLink to="/top" style={{ textDecoration: "none" }}>
+        <div className={classes.Logo}>HackerNews</div>
+      </NavLink>
       {/* <div className={classes.Logo}>HackerNews</div> */}
 
       <div className={classes.Items}>
-        <Link to="/top" style={{ textDecoration: 'none' }}>
+        <NavLink
+          to="/top"
+          style={{ textDecoration: "none" }}
+          activeStyle={{
+            color: "white",
+            borderBottom: "2px solid white",
+            marginBottom: "2px"
+          }}
+        >
           <ToolbarItem className={classes.Item} category="Top" />
-        </Link>
-        <Link to="/newest" style={{ textDecoration: 'none' }}>
+        </NavLink>
+        <NavLink
+          to="/newest"
+          style={{ textDecoration: "none" }}
+          activeStyle={{
+            color: "white",
+            borderBottom: "2px solid white",
+            marginBottom: "2px"
+          }}
+        >
           <ToolbarItem className={classes.Item} category="Newest" />
-        </Link>
-        <Link to="/ask" style={{ textDecoration: 'none' }}>
+        </NavLink>
+        <NavLink
+          to="/ask"
+          style={{ textDecoration: "none" }}
+          activeStyle={{
+            color: "white",
+            borderBottom: "2px solid white",
+            marginBottom: "2px"
+          }}
+        >
           <ToolbarItem className={classes.Item} category="Ask" />
-        </Link>
-        <Link to="/show" style={{ textDecoration: 'none' }}>
+        </NavLink>
+        <NavLink
+          to="/show"
+          style={{ textDecoration: "none" }}
+          activeStyle={{
+            color: "white",
+            borderBottom: "2px solid white",
+            marginBottom: "2px"
+          }}
+        >
           <ToolbarItem className={classes.Item} category="Show" />
-        </Link>
-        <Link to="/jobs" style={{ textDecoration: 'none' }}>
+        </NavLink>
+        <NavLink
+          to="/jobs"
+          style={{ textDecoration: "none" }}
+          activeStyle={{
+            color: "white",
+            borderBottom: "2px solid white",
+            marginBottom: "2px"
+          }}
+        >
           <ToolbarItem className={classes.Item} category="Jobs" />
-        </Link>
-
+        </NavLink>
       </div>
     </div>
   );
