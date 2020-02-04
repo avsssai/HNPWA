@@ -1,0 +1,113 @@
+.Display {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.NewsItem {
+    height: auto;
+    width: 60vw;
+    padding: 5px 16px 2px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 1vw auto;
+    overflow: auto;
+    clear: both;
+  }
+  
+  .Title {
+      font-size: 20px;
+      margin-top: 5px;
+      text-decoration: none;
+      color: black;
+      font-weight: 550;
+  }
+  .Title a {
+    color: black;
+    text-decoration: none;
+    
+  }
+  
+  .By{
+      font-size: small;
+      margin:0px 10px 0px 0px;
+      color: #828282;  
+      line-height: 25px;
+  
+    }
+  .Name{
+    font-weight: bolder;
+    font-style: italic;
+    color: #828282; 
+     line-height: 25px;
+  
+  }
+  .Details {
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 6px;
+    
+  }
+  .Comments{
+    font-size: small;
+  
+    margin:0px 10px 0px 0px;
+    color: #828282;
+    line-height: 25px;
+  
+  }
+  
+  .Score { 
+    font-size: small;
+    margin-right: 5px;
+    color: #FF6600;
+    font-weight: 900;
+    display: inline;
+    line-height: normal;
+    line-height: 25px;
+  
+  }
+  
+  .ScoreArrow{
+    font-size: small;
+    color: #FF6600;
+    font-weight: 900;
+    display: inline;
+    line-height: 25px;
+  
+  
+  }
+  .Srl{
+    font-size: medium;
+    opacity: 0.7;
+    color: grey;
+    display: inline;
+    line-height: 25px;
+  
+  }
+  
+  .Domain {
+    font-size: small;
+  
+    margin:0px 10px 0px 0px;
+    color: #828282;
+    line-height: 25px;
+  
+  }
+  
+  @media (max-width:500px){
+    .NewsItem {
+      width: 90vw;
+      padding: 2px 2px;
+      margin-top: 3px;
+    }
+    .Title {
+      font-size: 14px;
+    }
+    
+  
+    .Details, .Name, .By, .Comments,.Score, .Domain{
+      font-size: 0.7em;
+    }
+    .Details{
+      margin: 0;
+    }
+  }

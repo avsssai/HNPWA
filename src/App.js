@@ -7,7 +7,7 @@ import Toolbar from "./Controllers/Toolbar/Toolbar";
 import Show from './Components/Show/Show';
 import Jobs from './Components/Jobs/Jobs';
 // import Home from "./Home/Home";
-import Comments from './Controllers/Comments/Comments';
+import CommentsPage from './Controllers/CommentsPage/CommentsPage';
 
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -25,7 +25,7 @@ class App extends Component {
             <Route exact path="/ask" component={Ask} />
             <Route exact path="/show" component={Show} />
             <Route exact path="/jobs" component={Jobs} />
-            <Route exact path="/comments/:id" component={Comments} />
+            <Route exact path="/comments/:id" component={CommentsPage} />
           </Switch>
         </Router>
       </div>
