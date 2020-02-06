@@ -87,6 +87,14 @@
   line-height: 25px;
 
 }
+.Time {
+  font-size: small;
+
+  margin:0px 7px 0px 0px;
+  color: #828282;
+  line-height: 25px;
+
+}
 
 @media (max-width:500px){
   .NewsItem {

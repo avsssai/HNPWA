@@ -23,7 +23,7 @@ class Newest extends Component {
   }
   RightArrowClickHandler = () => {
     const pageNumber = this.state.pageNumber;
-    if(pageNumber >= 12) {
+    if(pageNumber >= 10) {
       return;
     }
 
@@ -46,7 +46,7 @@ class Newest extends Component {
           LeftArrowClickHandler={this.LeftArrowClickHandler}
           RightArrowClickHandler={this.RightArrowClickHandler}
           source={sourceURL}
-          pageLimit="12"
+          pageLimit="10"
           pageNumber={this.state.pageNumber}/>
       </div>
     )  

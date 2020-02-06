@@ -7,8 +7,8 @@ const Comments = (props) => {
     // var comments = props.comments.map(comment => {
     //     return <Comment key={comment.id} comment={comment}/>
     // })
-    if(props.comments){
-        var comments = props.comments.map(comment => {
+    if(props.comments && props.comments.length>0){
+        var subComments = props.comments.map(comment => {
             
             return <Comment key={comment.id} comment={comment} />
         });
@@ -16,7 +16,7 @@ const Comments = (props) => {
     
   return (
       <div>
-        {comments}
+        {subComments}
 
       </div>
 

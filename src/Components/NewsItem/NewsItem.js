@@ -17,7 +17,7 @@ const NewsItem = props => {
       </div>
       <div className={classes.Details}>
         <div className={classes.Score}>{item.points} points</div>
-
+          <div className={classes.Time}>{item.time_ago}</div>
         <div className={classes.By}>
           by <span className={classes.Name}>{item.user}</span>
         </div>
