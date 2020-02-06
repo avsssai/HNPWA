@@ -46,6 +46,15 @@
     margin-top: 6px;
     
   }
+  .CommentsSection {
+    height: auto;
+    width: 60vw;
+    padding: 5px 16px 2px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 1vw auto;
+    overflow: auto;
+    clear: both;
+  }
   .Comments{
     font-size: small;
   
@@ -94,20 +103,36 @@
   }
   
   @media (max-width:500px){
+    .CommentsPage {
+      /* width: 80vw; */
+      font-size: medium;
+    }
     .NewsItem {
-      width: 90vw;
-      padding: 2px 2px;
-      margin-top: 3px;
+      margin-top: 20vw;
+      margin-left: auto;
+      margin-right: auto;
+      width:100%;
+      box-sizing: border-box;
     }
     .Title {
       font-size: 14px;
     }
     
-  
+    .CommentsSection {
+      overflow: hidden;
+      /* white-space: initial; */
+      word-wrap: break-word;
+      width: 100%;
+      box-sizing: border-box;
+    }
     .Details, .Name, .By, .Comments,.Score, .Domain{
       font-size: 0.7em;
     }
     .Details{
       margin: 0;
+    }
+    .Loader {
+      position: absolute;
+      top: 10vw;
     }
   }

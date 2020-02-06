@@ -47,7 +47,8 @@ class CommentsPage extends Component {
 
 
             var display = (
-                <div className={classes.NewsItem}>
+            <div className={classes.CommentsPage}>
+            <div className={classes.NewsItem}>
                         <div className={classes.Title}>
                            
                     <a href={item.url}>{item.title}<span className={classes.Domain}> ({item.domain})</span>
@@ -64,15 +65,17 @@ class CommentsPage extends Component {
                         comments({item.comments_count})
                     </div>
                 </div>
+                </div>
                 <div className={classes.CommentsSection}>
-                <h3>Comments</h3>
+                <h4>Comments</h4>
                 <hr/>
                     {comments}
                 </div>
-                </div>
+
+            </div>
             )
         }else{
-            display = <Loader />
+            display = <Loader className={classes.Loader}/>
         }
     return (
       <div className={classes.Display}>

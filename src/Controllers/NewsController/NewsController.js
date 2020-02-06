@@ -86,14 +86,20 @@ class NewsController extends Component {
         // return <NewsItem id={item.id} key={item.id} item={item} />;
       });
     } else if (this.state.isLoading) {
-      itemsToDisplayInPage = <Loader />;
+      itemsToDisplayInPage = <Loader className={classes.Loader}/>;
     // itemsToDisplayInPage= null;
     }
     return (
       <div className={classes.NewsController}>
+      <div className={classes.ItemsToDisplayInPage}>
+      <div className={classes.Pagination}>
         {pagination}
 
-        {itemsToDisplayInPage}
+        </div>
+
+      {itemsToDisplayInPage}
+
+      </div>
         {/* <Pagination pageLimit={this.props.pageLimit}
                 click={this.changePage} 
                 pageNumber={pageNumber}
