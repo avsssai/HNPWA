@@ -6,7 +6,7 @@ const NewsItem = props => {
   const item = props.item;
   const id = item.id;
   var commentsRoute = `/comments/${id}`;
-
+  var profileURL = `/name/${item.user}`
   return (
     <div className={classes.NewsItem}>
       <div className={classes.Title}>
@@ -19,7 +19,7 @@ const NewsItem = props => {
         <div className={classes.Score}>{item.points} points</div>
           <div className={classes.Time}>{item.time_ago}</div>
         <div className={classes.By}>
-          by <span className={classes.Name}>{item.user}</span>
+          by <a className={classes.Name} href={profileURL}>{item.user}</a>
         </div>
         <a
           className={classes.Comments}

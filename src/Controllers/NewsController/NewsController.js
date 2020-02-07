@@ -81,32 +81,34 @@ class NewsController extends Component {
     }
     if (data && !this.state.isLoading) {
       var itemsToDisplayInPage = data.map(item => {
-        let srlNumber = (this.props.pageNumber-1)*30 + data.indexOf(item)+1;
-        return <NewsItem id={item.id} key={item.id} item={item} srlNumber={srlNumber}/>
+        let srlNumber =
+          (this.props.pageNumber - 1) * 30 + data.indexOf(item) + 1;
+        return (
+          <NewsItem
+            id={item.id}
+            key={item.id}
+            item={item}
+            srlNumber={srlNumber}
+          />
+        );
         // return <NewsItem id={item.id} key={item.id} item={item} />;
       });
     } else if (this.state.isLoading) {
-      itemsToDisplayInPage = <Loader className={classes.Loader}/>;
-    // itemsToDisplayInPage= null;
+      itemsToDisplayInPage = <Loader className={classes.Loader} />;
+      // itemsToDisplayInPage= null;
     }
     return (
       <div className={classes.NewsController}>
-      <div className={classes.ItemsToDisplayInPage}>
-      <div className={classes.Pagination}>
-        {pagination}
+        <div className={classes.ItemsToDisplayInPage}>
+          <div className={classes.Pagination}>{pagination}</div>
 
+          {itemsToDisplayInPage}
+
+          {!this.state.isLoading ? (
+            <div className={classes.Pagination}>{pagination}</div>
+          ) : null}
         </div>
-
-      {itemsToDisplayInPage}
-
-      </div>
-        {/* <Pagination pageLimit={this.props.pageLimit}
-                click={this.changePage} 
-                pageNumber={pageNumber}
-                LeftArrowClickHandler={this.LeftArrowClickHandler}
-                RightArrowClickHandler={this.RightArrowClickHandler}
-
-                /> */}
+        
       </div>
     );
   }

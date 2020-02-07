@@ -6,6 +6,7 @@ import Ask from "./Components/Ask/Ask";
 import Toolbar from "./Controllers/Toolbar/Toolbar";
 import Show from './Components/Show/Show';
 import Jobs from './Components/Jobs/Jobs';
+import Profile from './Components/Profile/Profile';
 // import Home from "./Home/Home";
 import CommentsPage from './Controllers/CommentsPage/CommentsPage';
 
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/show" component={Show} />
             <Route exact path="/jobs" component={Jobs} />
             <Route exact path="/comments/:id" component={CommentsPage} />
+            <Route exact path="/name/:name" component={Profile} />
           </Switch>
         </Router>
       </div>

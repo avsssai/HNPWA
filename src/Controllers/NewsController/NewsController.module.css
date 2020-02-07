@@ -6,6 +6,10 @@
     
 
 }
+.Pagination2 {
+    position: absolute;
+    bottom: 0;
+}
 
 @media(max-width:500px){
     .NewsController .ItemsToDisplayInPage{

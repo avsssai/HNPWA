@@ -1,6 +1,5 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
-import Loader from '../Loader/Loader';
 
 const Comments = (props) => {
     
