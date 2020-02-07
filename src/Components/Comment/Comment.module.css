@@ -4,7 +4,13 @@
     min-width: 20vw;
     margin-left: 10px;
     padding: 0px 3px 3px 3px;
-    border-left: 2px solid rgba(192,192,192,0.3);
+    border-left: 1px solid #BFC9CA;
+    /* border-left: 1px solid black ; */
+}
+.Comment .User {
+    font-weight: 900;
+    color:#FF6600;
+
 }
 
 .CommentDetails {

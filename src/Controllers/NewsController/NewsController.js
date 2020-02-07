@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import classes from "./NewsController.module.css";
+// import classes from "./NewsController.module.css";
+import './NewsController.css';
 import NewsItem from "../../Components/NewsItem/NewsItem";
 import Pagination from "../../Components/Pagination/Pagination";
 import Axios from "axios";
 import Loader from "../../Components/Loader/Loader";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class NewsController extends Component {
   state = {
@@ -94,21 +96,25 @@ class NewsController extends Component {
         // return <NewsItem id={item.id} key={item.id} item={item} />;
       });
     } else if (this.state.isLoading) {
-      itemsToDisplayInPage = <Loader className={classes.Loader} />;
+      itemsToDisplayInPage = <Loader className="Loader" />;
       // itemsToDisplayInPage= null;
     }
     return (
-      <div className={classes.NewsController}>
-        <div className={classes.ItemsToDisplayInPage}>
-          <div className={classes.Pagination}>{pagination}</div>
+      <div className="NewsController">
+        <div className="Pagination">{pagination}</div>
+        <TransitionGroup component={null}>
+          {!this.state.isLoading && (
+            <CSSTransition classNames="news" timeout={700}>
+              <div className="ItemsToDisplayInPage">
+                {itemsToDisplayInPage}
+              </div>
+            </CSSTransition>
+          )}
+        </TransitionGroup>
 
-          {itemsToDisplayInPage}
-
-          {!this.state.isLoading ? (
-            <div className={classes.Pagination}>{pagination}</div>
-          ) : null}
-        </div>
-        
+        {!this.state.isLoading ? (
+          <div className="Pagination2">{pagination}</div>
+        ) : null}
       </div>
     );
   }
