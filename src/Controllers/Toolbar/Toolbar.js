@@ -4,11 +4,14 @@ import ToolbarItem from "../../Components/ToolbarItem/ToolbarItem";
 import { NavLink } from "react-router-dom";
 
 const Toolbar = props => {
+  function refreshPage(){ 
+    window.location.reload(); 
+}
   return (
     <div className={classes.Toolbar}>
-      <NavLink to="/top" style={{ textDecoration: "none" }}>
+      <div  style={{ textDecoration: "none",cursor:"pointer" }} onClick={refreshPage}>
         <div className={classes.Logo}>HackerNews</div>
-      </NavLink>
+      </div>
       {/* <div className={classes.Logo}>HackerNews</div> */}
 
       <div className={classes.Items}>

@@ -102,15 +102,18 @@ class NewsController extends Component {
     return (
       <div className="NewsController">
         <div className="Pagination">{pagination}</div>
+        <div className="NewsItems">
         <TransitionGroup component={null}>
           {!this.state.isLoading && (
-            <CSSTransition classNames="news" timeout={700}>
+            <CSSTransition classNames="news" timeout={2000}>
               <div className="ItemsToDisplayInPage">
                 {itemsToDisplayInPage}
               </div>
             </CSSTransition>
           )}
         </TransitionGroup>
+
+        </div>
 
         {!this.state.isLoading ? (
           <div className="Pagination2">{pagination}</div>

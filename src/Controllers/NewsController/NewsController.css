@@ -1,44 +1,46 @@
-
-.NewsController .ItemsToDisplayInPage{
-    margin: 0 19vw;
-    
-
+.NewsController .NewsItems {
+  margin: 10px 0;
 }
 
+.NewsController .ItemsToDisplayInPage {
+  margin: 0 19vw;
+}
 
-.news {
-    opacity: 0.01;
-  transform: scale(1.1);
+.news-enter {
+  opacity: 0;
+  /* transform: scale(1.1); */
+  transform: translateX(-5vw);
 }
 .news-enter-active {
-    opacity: 1;
-    transform: scale(1);
-     transition: all 300ms;
-  }
-  
-  .news-exit {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .news-exit-active {
-    opacity: 0.01;
-    transform: scale(1.2);
-    transform: translateX(1000px);
-    transition: all 400ms;
-  }
+  opacity: 1;
+  transform: scale(1);
+  /* transition: all 300ms cubic-bezier(0,0,.74,.32); */
+  transition: opacity 400ms cubic-bezier(0,0,.74,.32);
+}
 
-@media(max-width:500px){
-    .NewsController .ItemsToDisplayInPage{
-        margin:4vw 4.5vw;
-    }
-    .Loader {
-        top: 100px;
-    }
-    .Pagination {
-      margin-top: 70px;
-    }
-    .Pagination2 {
-      margin-top: 10px;
-    }
+.news-exit {
+  opacity: 1;
+}
+
+.news-exit-active {
+  opacity: 0;
+  /* transform: translateX(-5vw); */
+
+  /* transform: translateX(-2vw); */
+  transition: opacity 400ms cubic-bezier(0,0,.74,.32);
+}
+
+@media (max-width: 500px) {
+  .NewsController .ItemsToDisplayInPage {
+    margin: 4vw 4.5vw;
+  }
+  .Loader {
+    top: 100px;
+  }
+  .Pagination {
+    margin-top: 70px;
+  }
+  .Pagination2 {
+    margin-top: 10px;
+  }
 }
