@@ -10,13 +10,14 @@ const NewsItem = props => {
   return (
     <div className={classes.NewsItem}>
       <div className={classes.Title}>
-        <div className={classes.Srl}>{props.srlNumber}. </div>
+        {/* <div className={classes.Srl}>{props.srlNumber}. </div> */}
+        <div className={classes.Score}>{item.points} &#9733; </div>
+
         <a href={item.url}>{item.title}        <span className={classes.Domain}> ({item.domain})</span>
 </a>
 
       </div>
       <div className={classes.Details}>
-        <div className={classes.Score}>{item.points} points</div>
           <div className={classes.Time}>{item.time_ago}</div>
         <div className={classes.By}>
           by <a className={classes.Name} href={profileURL}>{item.user}</a>
